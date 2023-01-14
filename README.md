@@ -12,7 +12,6 @@ Fui utilizado conceitos um pouco mais avançados desenvolvendo do zero uma aplic
 - Github API
 - Context API
 - React Router Dom
-- Custom hooks
 
 ## 👨‍💻 Funcionalidades:
 
