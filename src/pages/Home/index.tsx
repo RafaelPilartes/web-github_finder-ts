@@ -35,27 +35,32 @@ import UserCard from '../../components/UserCard'
 import { HashLoader } from 'react-spinners'
 import { githubUserComplete } from '../../interfaces/github'
 
+export const notifyInfo = () => {
+  toast.info('Digite o nome da cidade !', {
+    position: toast.POSITION.TOP_RIGHT
+  })
+}
+export const notifySuccess = (success: string) => {
+  toast.success(success, {
+    position: toast.POSITION.TOP_RIGHT
+  })
+}
+export const notifyWarn = (warn: string) => {
+  toast.warn(warn, {
+    position: toast.POSITION.TOP_RIGHT
+  })
+}
+export const notifyError = (error: string) => {
+  toast.error(error, {
+    position: toast.POSITION.TOP_RIGHT
+  })
+}
+
 function Home() {
   const { userData, setUserData, setUserRepos } = useContext(AppContext)
 
   const [searchTxt, setSearchTxt] = useState<string>('')
   const [isLoading, setIsLoading] = useState<boolean>(false)
-
-  const notifyInfo = () => {
-    toast.info('Digite o nome da cidade !', {
-      position: toast.POSITION.TOP_RIGHT
-    })
-  }
-  const notifyWarn = (warn: string) => {
-    toast.warn(warn, {
-      position: toast.POSITION.TOP_RIGHT
-    })
-  }
-  const notifyError = (error: string) => {
-    toast.error(error, {
-      position: toast.POSITION.TOP_RIGHT
-    })
-  }
 
   async function search() {
     // setBackGround(searchTxt)

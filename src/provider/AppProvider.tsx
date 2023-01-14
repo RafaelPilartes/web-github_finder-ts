@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 import { IChildren } from '../interfaces/children'
-import { githubUserComplete } from '../interfaces/github'
+import { githubRep, githubUserComplete } from '../interfaces/github'
 
 interface AppContextType {
   isLoading: boolean
@@ -9,7 +9,7 @@ interface AppContextType {
   setBackGround: (e: string) => void
   userData: githubUserComplete | null
   setUserData: (e: any) => void
-  userRepos: any[]
+  userRepos: githubRep[]
   setUserRepos: (e: any) => void
 }
 
@@ -19,7 +19,7 @@ export function AppProvider({ children }: IChildren) {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const [backGround, setBackGround] = useState<string>('')
   const [userData, setUserData] = useState<githubUserComplete | null>(null)
-  const [userRepos, setUserRepos] = useState([])
+  const [userRepos, setUserRepos] = useState<githubRep[]>([])
 
   return (
     <AppContext.Provider

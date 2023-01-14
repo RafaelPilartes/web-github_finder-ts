@@ -7,6 +7,7 @@ export const UserGithubContainer = styled.section`
 
   .container {
     width: 100%;
+    position: relative;
 
     display: flex;
     flex-direction: column;
@@ -14,13 +15,15 @@ export const UserGithubContainer = styled.section`
     .backgroundImage {
       width: 100%;
       height: 16rem;
-      position: relative;
+      position: absolute;
+      top: 0;
+      left: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
       background-color: red;
       background-image: url('https://www.teahub.io/photos/full/16-167748_mac-aurora-cool-backgrounds-designs-wallpapers-hd-cover.jpg');
+      z-index: 1;
     }
 
     .containerInfos {
@@ -28,9 +31,12 @@ export const UserGithubContainer = styled.section`
       justify-content: center;
       gap: 1.4rem;
       margin: 1rem 4rem;
+      z-index: 10;
 
       .containerInfoUser {
         max-width: 24rem;
+        margin-top: 6rem;
+        background-color: ${({ theme }) => theme.colors['base-white']};
         border: 0.04rem solid
           ${({ theme }) => theme.colors['brand-primary-light-opacity']};
 
@@ -160,9 +166,17 @@ export const UserGithubContainer = styled.section`
 
       .containerInfoRepos {
         width: 100%;
+        margin-top: 6rem;
         flex: 1;
+        background-color: ${({ theme }) => theme.colors['base-white']};
         border: 0.04rem solid
           ${({ theme }) => theme.colors['brand-primary-light-opacity']};
+
+        .containerRepos {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+        }
       }
 
       .containerTitle {

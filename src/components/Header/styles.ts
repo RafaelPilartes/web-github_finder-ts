@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 5rem;
+  padding: 1rem;
 
   /* filter: blur(8px);
   -webkit-filter: blur(8px); */
@@ -17,5 +17,6 @@ export const HeaderContainer = styled.header`
 
   img {
     width: 18rem;
+    cursor: pointer;
   }
 `

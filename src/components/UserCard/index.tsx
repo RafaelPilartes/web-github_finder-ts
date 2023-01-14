@@ -19,9 +19,11 @@ const UserCard: React.FC<UserCardProps> = ({ data }) => {
     <UserCardContainer>
       <img src={data.avatar_url} alt="" />
       <h4>{data.login}</h4>
-      <small>
-        <MdOutlineLocationOn /> {data.location}
-      </small>
+      {data.location && (
+        <small>
+          <MdOutlineLocationOn /> {data.location}
+        </small>
+      )}
 
       <div className="containerOtherInfos">
         <button className="containerInfo">
